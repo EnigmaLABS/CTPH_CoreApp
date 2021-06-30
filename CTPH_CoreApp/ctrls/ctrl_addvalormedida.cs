@@ -39,6 +39,7 @@ namespace CTPH_CoreApp.ctrls
         private void lnkAtras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             _container.UnsetValoresMedida();
+            _container.TomarMuestra();
         }
 
 

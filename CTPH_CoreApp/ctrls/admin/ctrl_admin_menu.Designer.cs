@@ -32,6 +32,7 @@
             this.cmdElementos = new System.Windows.Forms.Button();
             this.cmdPuntosDeMedida = new System.Windows.Forms.Button();
             this.lnkAtras = new System.Windows.Forms.LinkLabel();
+            this.cmdPerfiles = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -88,11 +89,26 @@
             this.lnkAtras.Text = "Atrás";
             this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
             // 
+            // cmdPerfiles
+            // 
+            this.cmdPerfiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdPerfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdPerfiles.Font = new System.Drawing.Font("Segoe UI Symbol", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmdPerfiles.ForeColor = System.Drawing.Color.Coral;
+            this.cmdPerfiles.Location = new System.Drawing.Point(35, 476);
+            this.cmdPerfiles.Name = "cmdPerfiles";
+            this.cmdPerfiles.Size = new System.Drawing.Size(533, 103);
+            this.cmdPerfiles.TabIndex = 1;
+            this.cmdPerfiles.Text = "3. Perfiles";
+            this.cmdPerfiles.UseVisualStyleBackColor = true;
+            // 
             // ctrl_admin_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmdPerfiles);
             this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.cmdPuntosDeMedida);
             this.Controls.Add(this.cmdElementos);
@@ -110,5 +126,6 @@
         private System.Windows.Forms.Button cmdElementos;
         private System.Windows.Forms.Button cmdPuntosDeMedida;
         private System.Windows.Forms.LinkLabel lnkAtras;
+        private System.Windows.Forms.Button cmdPerfiles;
     }
 }
