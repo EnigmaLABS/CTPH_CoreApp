@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CTPH_CoreApp.ctrls
@@ -25,7 +20,7 @@ namespace CTPH_CoreApp.ctrls
 
         private void cmdConfigurar_Click(object sender, EventArgs e)
         {
-            //TODO
+            _container.ShowAdminMenu();
         }
     }
 }

@@ -119,6 +119,7 @@ namespace CTPH_CoreApp
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(ctrl);
         }
+
         public void UnselectPuntosDeMedida()
         {
             panelContainer.Controls.Clear();
@@ -187,6 +188,22 @@ namespace CTPH_CoreApp
 
         #endregion
 
+
+        //-->>
+        #region Métodos públicos - Admin
+
+        public void ShowAdminMenu()
+        {
+            panelContainer.Controls.Clear();
+
+            ctrls.admin.ctrl_admin_menu ctrl_menuadmin = new ctrls.admin.ctrl_admin_menu(this);
+            ctrl_menuadmin.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(ctrl_menuadmin);
+        }
+
+        #endregion
 
         //-->>
         #region Métodos privados
