@@ -61,6 +61,7 @@
             this.cmdElementos.TabIndex = 1;
             this.cmdElementos.Text = "1. Situación ambiente - Elementos";
             this.cmdElementos.UseVisualStyleBackColor = true;
+            this.cmdElementos.Click += new System.EventHandler(this.cmdElementos_Click);
             // 
             // cmdPuntosDeMedida
             // 

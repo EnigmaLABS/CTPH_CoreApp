@@ -17,5 +17,10 @@ namespace CTPH_CoreApp.ctrls.admin
         {
             _container.ShowBienvenida();
         }
+
+        private void cmdElementos_Click(object sender, System.EventArgs e)
+        {
+            _container.AdminElementos();
+        }
     }
 }

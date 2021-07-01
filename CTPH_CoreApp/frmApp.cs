@@ -12,7 +12,8 @@ namespace CTPH_CoreApp
     public partial class frmApp : Form
     {
         private tipos_app.appMuestra _Muestra;
-        private MuestrasServiceAgent _serviceagent;
+        private MuestrasServiceAgent _MuestrasServiceAgent;
+        private AdminServiceAgent _AdminServiceAgent;
         private ClientConfig _config;
 
         public frmApp(ClientConfig config)
@@ -21,7 +22,8 @@ namespace CTPH_CoreApp
 
             _config = config;
 
-            _serviceagent = new MuestrasServiceAgent(_config.Url);
+            _MuestrasServiceAgent = new MuestrasServiceAgent(_config.UrlMuestras);
+            _AdminServiceAgent = new AdminServiceAgent(_config.UrlAdmin);
         }
 
         private void frmApp_Load(object sender, EventArgs e)
@@ -68,7 +70,7 @@ namespace CTPH_CoreApp
             {
                 case tipos_app.appMuestra.enumTipoMuestra.Muestra:
 
-                    ctrls.ctrl_puntosdemedida ctrl_pm = new ctrls.ctrl_puntosdemedida(this, _serviceagent);
+                    ctrls.ctrl_puntosdemedida ctrl_pm = new ctrls.ctrl_puntosdemedida(this, _MuestrasServiceAgent);
                     ctrl_pm.Dock = DockStyle.Fill;
 
                     panelContainer.Controls.Clear();
@@ -79,7 +81,7 @@ namespace CTPH_CoreApp
                 case tipos_app.appMuestra.enumTipoMuestra.SituacionAmbiente:
                 case tipos_app.appMuestra.enumTipoMuestra.MuestraPlusSituacion:
 
-                    ctrls.ctrl_situacionmenu ctrl_sit = new ctrls.ctrl_situacionmenu(this, _serviceagent);
+                    ctrls.ctrl_situacionmenu ctrl_sit = new ctrls.ctrl_situacionmenu(this, _MuestrasServiceAgent);
                     ctrl_sit.Dock = DockStyle.Fill;
 
                     panelContainer.Controls.Clear();
@@ -95,7 +97,7 @@ namespace CTPH_CoreApp
 
             panelContainer.Controls.Clear();
 
-            ctrls.ctrl_AddValorElemento ctrl = new ctrls.ctrl_AddValorElemento(_Muestra, this, _serviceagent);
+            ctrls.ctrl_AddValorElemento ctrl = new ctrls.ctrl_AddValorElemento(_Muestra, this, _MuestrasServiceAgent);
             ctrl.Dock = DockStyle.Fill;
 
             panelContainer.Controls.Clear();
@@ -174,7 +176,7 @@ namespace CTPH_CoreApp
         {
             _Muestra.Muestra.Observaciones = Observaciones;
 
-            var resInsert = _serviceagent.Insert(_Muestra.Muestra);
+            var resInsert = _MuestrasServiceAgent.Insert(_Muestra.Muestra);
 
             if (resInsert.OK)
             {
@@ -203,7 +205,19 @@ namespace CTPH_CoreApp
             panelContainer.Controls.Add(ctrl_menuadmin);
         }
 
+        public void AdminElementos()
+        {
+            panelContainer.Controls.Clear();
+
+            ctrls.admin.ctrl_admin_elementos ctrl_adminmenu = new ctrls.admin.ctrl_admin_elementos(this, _AdminServiceAgent);
+            ctrl_adminmenu.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(ctrl_adminmenu);
+        }
+
         #endregion
+
 
         //-->>
         #region Métodos privados
@@ -227,7 +241,7 @@ namespace CTPH_CoreApp
 
                     if (fromSituacion)
                     {
-                        ctrls.ctrl_puntosdemedida ctrl_pm = new ctrls.ctrl_puntosdemedida(this, _serviceagent);
+                        ctrls.ctrl_puntosdemedida ctrl_pm = new ctrls.ctrl_puntosdemedida(this, _MuestrasServiceAgent);
                         ctrl_pm.Dock = DockStyle.Fill;
                         panelContainer.Controls.Add(ctrl_pm);
                     }

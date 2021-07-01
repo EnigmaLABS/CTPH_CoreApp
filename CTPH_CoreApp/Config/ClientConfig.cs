@@ -6,6 +6,7 @@ namespace CTPH_CoreApp.Config
 {
     public class ClientConfig
     {
-        public string Url { get; set; }
+        public string UrlMuestras { get; set; }
+        public string UrlAdmin { get; set; }
     }
 }
