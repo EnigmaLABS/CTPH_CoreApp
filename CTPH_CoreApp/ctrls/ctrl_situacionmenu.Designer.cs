@@ -33,7 +33,11 @@
             this.lvElementos = new System.Windows.Forms.ListView();
             this.picOK = new System.Windows.Forms.PictureBox();
             this.lnkAtras = new System.Windows.Forms.LinkLabel();
+            this.picPerfil = new System.Windows.Forms.PictureBox();
+            this.picAtras = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picOK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,6 +67,7 @@
             this.lvElementos.TabIndex = 1;
             this.lvElementos.UseCompatibleStateImageBehavior = false;
             this.lvElementos.View = System.Windows.Forms.View.List;
+            this.lvElementos.DoubleClick += new System.EventHandler(this.lvElementos_DoubleClick);
             // 
             // picOK
             // 
@@ -89,11 +94,38 @@
             this.lnkAtras.Text = "Atrás";
             this.lnkAtras.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAtras_LinkClicked);
             // 
+            // picPerfil
+            // 
+            this.picPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picPerfil.Image = ((System.Drawing.Image)(resources.GetObject("picPerfil.Image")));
+            this.picPerfil.Location = new System.Drawing.Point(519, 239);
+            this.picPerfil.Name = "picPerfil";
+            this.picPerfil.Size = new System.Drawing.Size(67, 63);
+            this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPerfil.TabIndex = 3;
+            this.picPerfil.TabStop = false;
+            this.picPerfil.Click += new System.EventHandler(this.picPerfil_Click);
+            // 
+            // picAtras
+            // 
+            this.picAtras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picAtras.Image = ((System.Drawing.Image)(resources.GetObject("picAtras.Image")));
+            this.picAtras.Location = new System.Drawing.Point(519, 308);
+            this.picAtras.Name = "picAtras";
+            this.picAtras.Size = new System.Drawing.Size(67, 63);
+            this.picAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAtras.TabIndex = 3;
+            this.picAtras.TabStop = false;
+            this.picAtras.Visible = false;
+            this.picAtras.Click += new System.EventHandler(this.picAtras_Click);
+            // 
             // ctrl_situacionmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.picAtras);
+            this.Controls.Add(this.picPerfil);
             this.Controls.Add(this.lnkAtras);
             this.Controls.Add(this.picOK);
             this.Controls.Add(this.lvElementos);
@@ -102,6 +134,8 @@
             this.Size = new System.Drawing.Size(601, 747);
             this.Load += new System.EventHandler(this.ctrl_situacionmenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picOK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +147,7 @@
         private System.Windows.Forms.ListView lvElementos;
         private System.Windows.Forms.PictureBox picOK;
         private System.Windows.Forms.LinkLabel lnkAtras;
+        private System.Windows.Forms.PictureBox picPerfil;
+        private System.Windows.Forms.PictureBox picAtras;
     }
 }
